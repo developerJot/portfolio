@@ -1,0 +1,1810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IsThatJot</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="shortcut icon" href="./assets/img/logo.png" type="image/x-icon">
+
+    <style>
+        .hero-section .row {
+            height: 89vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--text-color);
+        }
+
+        .hero-section .content h3 {
+            font-size: 40px;
+            font-weight: 600;
+        }
+
+        .hero-section .content h3 span {
+            color: var(--bg-color);
+            font-size: 55px;
+        }
+
+        .hero-section .content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(-5deg, var(--bg-color) 53%, white 61%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin: 0;
+            filter: blur(-1px);
+        }
+
+        .hero-section .content p {
+            font-size: 18px;
+        }
+
+        .hero-section .content a {
+            margin: 10px 0;
+            font-size: 25px;
+        }
+
+        .hero-section .my-img {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-section .my-img::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-color);
+            border-radius: 30%;
+            filter: blur(80px);
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        .hero-section .my-img .jagjot_img {
+            width: 65%;
+            height: 50%;
+            border-bottom-left-radius: 30%;
+            border-bottom-right-radius: 30%;
+            animation: slideup;
+            animation-iteration-count: infinite;
+            animation-duration: 3s;
+            animation-direction: alternate;
+            animation-timing-function: ease-in-out;
+        }
+
+        @keyframes slideup {
+            from {
+                transform: translateY(-10px);
+            }
+
+            to {
+                transform: translateY(-80px);
+            }
+        }
+
+        .cursor {
+            display: inline-block;
+            margin-left: 5px;
+            animation: blink 0.7s infinite;
+            color: var(--bg-color);
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* Floating Tech Logos - Small Size */
+        .tech-logo {
+            position: absolute;
+            width: 45px;
+            /* Smaller size */
+            height: 45px;
+            border-radius: 50%;
+            padding: 6px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+            z-index: 3;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        .tech-logo:hover {
+            transform: scale(1.25);
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Positions around your image */
+        .html {
+            top: 12%;
+            left: 27%;
+            animation-delay: 0s;
+        }
+
+        .css {
+            top: 28%;
+            right: 32%;
+            animation-delay: 1.1s;
+        }
+
+        .bootstrap {
+            top: 0%;
+            right: 40%;
+            animation-delay: 2.3s;
+        }
+
+        .mysql {
+            bottom: 22%;
+            left: 14%;
+            animation-delay: 1.6s;
+        }
+
+        .react {
+            bottom: 30%;
+            right: 16%;
+            animation-delay: 3.4s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-30px) rotate(8deg);
+            }
+        }
+
+        /* Mobile friendly */
+        @media (max-width: 768px) {
+            .tech-logo {
+                /* width: 35px;
+                height: 35px; */
+                display: none;
+            }
+
+            .jagjot_img {
+                display: none;
+            }
+
+        }
+    </style>
+
+
+
+
+
+
+    <style>
+        /* About Section Styles */
+        .about-section {
+            background: #0a0a0a;
+            color: var(--text-color);
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(-5deg, var(--bg-color) 53%, white 61%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 30px;
+        }
+
+        .skill-item {
+            background: #2B2B2B;
+            padding: 18px 22px;
+            border-radius: 15px;
+            border: 1px solid #444;
+            transition: 0.5s ease;
+        }
+
+        .skill-item:hover {
+            transform: scale(1.1);
+            border: 1px solid var(--bg-color);
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            align-items: center;
+        }
+
+        .skill-name {
+            font-size: 16px;
+            font-weight: 500;
+            color: #ddd;
+        }
+
+        .skill-percent {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--bg-color);
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: #444;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(to right, var(--bg-color), #ff9f6b);
+            border-radius: 10px;
+            transition: width 1.5s ease-in-out;
+        }
+
+        .about-info {
+            background: #2B2B2B;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #444;
+            height: 100%;
+
+            /* Smooth transition for all hover effects */
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .about-info:hover {
+            /* Beautiful glowing shadow */
+            box-shadow:
+                0 20px 40px rgba(219, 121, 16, 0.6),
+                0 0 0 2px rgba(138, 138, 138, 0.3),
+                0 0 30px rgba(255, 255, 255, 0.08);
+
+            /* Slightly lifted & brighter background */
+            background: #333333;
+
+            /* Enhanced border */
+            border: 2px solid var(--bg-color);
+
+            /* Gentle lift effect */
+            transform: translateY(-8px);
+        }
+
+        .info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 16px 0;
+            border-bottom: 1px solid #444;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            color: #aaa;
+            font-weight: 500;
+        }
+
+        .info-value {
+            color: white;
+            font-weight: 500;
+        }
+    </style>
+
+
+
+
+
+
+
+
+    <style>
+        #services .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(216, 103, 60, 0.2);
+        }
+
+        #services .btn:hover {
+            background: #D8673C !important;
+            color: white !important;
+        }
+
+        #services img {
+            filter: brightness(1.1);
+            transition: transform 0.3s ease;
+        }
+
+        #services .card:hover img {
+            transform: scale(1.1);
+        }
+    </style>
+
+
+
+
+
+
+    <style>
+        .project-card {
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #d8683c34;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(216, 103, 60, 0.25);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 230px;
+        }
+
+        .project-card-content {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+        }
+
+        .project-card-content h3 {
+            font-size: 20px;
+            margin: 15px 0;
+            font-weight: 600;
+            color: var(--bg-color);
+        }
+
+        .project-card-content h4 {
+            font-size: 15px;
+            border: 1px solid var(--bg-color);
+            width: fit-content;
+            padding: 5px 15px;
+            border-radius: 15px;
+            color: var(--bg-color);
+            background: #e3531a1a;
+            font-weight: 600;
+        }
+
+        .project-card-content h2 {
+            font-size: 24px;
+            margin: 15px 0;
+            font-weight: 600;
+        }
+
+        .project-card-content p {
+            color: gray;
+        }
+
+        .project-card-content .project-arrow {
+            border: 1px solid var(--bg-color);
+            background: #d8683c34;
+            padding: 10px 17px;
+            border-radius: 30px;
+        }
+    </style>
+
+
+
+
+
+    <style>
+        #why-choose-us h2 {
+            line-height: 1.1;
+        }
+
+        #why-choose-us .col-md-6 {
+            transition: all 0.3s ease;
+        }
+
+        #why-choose-us .col-md-6:hover {
+            transform: translateX(8px);
+        }
+    </style>
+
+
+
+
+
+
+    <style>
+        #contact {
+            background: #0a0a0a;
+            padding: 96px 0 80px;
+        }
+
+        .contact-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #D8673C;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .contact-eyebrow::before,
+        .contact-eyebrow::after {
+            content: '';
+            width: 32px;
+            height: 1.5px;
+            background: #D8673C;
+            display: block;
+        }
+
+        .contact-heading {
+            font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.15;
+            margin-bottom: 14px;
+        }
+
+        .contact-heading span {
+            color: #D8673C;
+        }
+
+        .contact-sub {
+            color: #888;
+            font-size: 1.2rem;
+            max-width: 520px;
+            margin: 0 auto 52px;
+        }
+
+        .c-card {
+            background: #111111;
+            border: 1px solid #1e1e1e;
+            border-radius: 12px;
+            padding: 32px 28px;
+        }
+
+        .c-card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .c-icon-wrap {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: rgba(216, 103, 60, 0.15);
+            border: 1px solid rgba(216, 103, 60, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: #D8673C;
+            font-size: 1.5rem;
+        }
+
+        .c-card-title {
+            color: #fff;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0 0 4px;
+        }
+
+        .c-card-sub {
+            color: #888;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Form */
+        .c-input {
+            background: #0f0f0f;
+            border: 1px solid #1e1e1e;
+            border-radius: 8px;
+            color: #e8e8e8;
+            padding: 15px 16px 15px 48px;
+            width: 100%;
+            font-size: 1.05rem;
+            transition: border-color .2s, box-shadow .2s;
+            outline: none;
+        }
+
+        .c-input::placeholder {
+            color: #888;
+        }
+
+        .c-input:focus {
+            border-color: #D8673C;
+            box-shadow: 0 0 0 3px rgba(216, 103, 60, 0.35);
+        }
+
+        .c-field {
+            position: relative;
+            margin-bottom: 14px;
+        }
+
+        .c-field-icon {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+            font-size: 1rem;
+            pointer-events: none;
+            width: 16px;
+            text-align: center;
+        }
+
+        textarea.c-input {
+            min-height: 148px;
+            resize: vertical;
+            padding-top: 15px;
+        }
+
+        textarea.c-input~.c-field-icon {
+            top: 18px;
+            transform: none;
+        }
+
+        /* Button */
+        .c-btn {
+            background: #D8673C;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 15px 36px;
+            font-size: 1.08rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: background .2s, transform .15s;
+        }
+
+        .c-btn:hover {
+            background: #c25530;
+            transform: translateY(-1px);
+        }
+
+        .c-reply-note {
+            color: #888;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .c-reply-note i {
+            color: #D8673C;
+        }
+
+        /* Info rows */
+        .info-row {
+            background: #0f0f0f;
+            border: 1px solid #1e1e1e;
+            border-radius: 8px;
+            padding: 15px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .info-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-row-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .info-row-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            background: rgba(216, 103, 60, 0.15);
+            border: 1px solid rgba(216, 103, 60, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #D8673C;
+            font-size: 1.05rem;
+            flex-shrink: 0;
+        }
+
+        .info-label {
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0 0 3px;
+        }
+
+        .info-value {
+            color: #D8673C;
+            font-size: .95rem;
+            margin: 0;
+        }
+
+        .copy-btn {
+            background: #1a1a1a;
+            border: 1px solid #1e1e1e;
+            border-radius: 6px;
+            color: #888;
+            width: 34px;
+            height: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: color .2s, border-color .2s;
+            flex-shrink: 0;
+            font-size: .95rem;
+        }
+
+        .copy-btn:hover {
+            color: #D8673C;
+            border-color: rgba(216, 103, 60, 0.35);
+        }
+
+        /* Social */
+        .social-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            margin-top: 4px;
+        }
+
+        .social-btn {
+            background: #0f0f0f;
+            border: 1px solid #1e1e1e;
+            border-radius: 8px;
+            color: #e8e8e8;
+            padding: 13px 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            font-size: .95rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: border-color .2s, color .2s, background .2s;
+        }
+
+        .social-btn:hover {
+            border-color: rgba(216, 103, 60, 0.35);
+            color: #D8673C;
+            background: rgba(216, 103, 60, 0.15);
+        }
+
+        .social-btn i {
+            font-size: 1.1rem;
+        }
+
+        .social-btn.gh {
+            color: #fff;
+        }
+
+        .social-btn.li {
+            color: #0A66C2;
+        }
+
+        .social-btn.ig {
+            color: #E1306C;
+        }
+
+        .social-btn.tw {
+            color: #fff;
+        }
+
+        .social-btn.yt {
+            color: #FF0000;
+        }
+
+        .social-btn.fb {
+            color: #1877F2;
+        }
+
+        .connect-card {
+            margin-top: 20px;
+        }
+
+        .connect-card .c-card-header {
+            margin-bottom: 20px;
+        }
+    </style>
+
+
+
+
+
+
+
+    <!-- Plane Smoke Section CSS -->
+    <style>
+        .ready-start {
+            padding: 120px 0;
+        }
+
+        .ready-box {
+            background: linear-gradient(135deg, #1a1a1a, #111111);
+            border-radius: 20px;
+            padding: 45px 50px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(216, 103, 60, 0.15);
+            /* min-height: 230px; */
+        }
+
+        .ready-title {
+            color: white;
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .ready-subtitle {
+            color: #cccccc;
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .btn-quote {
+            background-color: #D8673C;
+            color: white;
+            padding: 16px 32px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.4s ease;
+            white-space: nowrap;
+        }
+
+        .btn-quote:hover {
+            background-color: #ff8a5c;
+            transform: translateY(-3px);
+        }
+
+        /* Wispy Orange Smoke */
+        .smoke-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.7;
+        }
+
+        .smoke {
+            position: absolute;
+            bottom: 15%;
+            left: -200px;
+            width: 320px;
+            height: 18px;
+            background: linear-gradient(90deg, transparent 0%, #D8673C 25%, #ff8a5c 50%, #D8673C 75%, transparent 100%);
+            border-radius: 50%;
+            filter: blur(14px);
+            opacity: 0.65;
+            animation: smokeDrift 5.8s linear infinite;
+        }
+
+        @keyframes smokeDrift {
+            0% {
+                transform: translateX(-250px) translateY(8px) scaleX(0.65);
+                opacity: 0.08;
+            }
+
+            18% {
+                opacity: 0.8;
+            }
+
+            70% {
+                opacity: 0.55;
+            }
+
+            100% {
+                transform: translateX(1350px) translateY(-32px) scaleX(1.4);
+                opacity: 0;
+            }
+        }
+
+        .smoke:nth-child(1) {
+            animation-delay: 0s;
+            bottom: 18%;
+            height: 15px;
+        }
+
+        .smoke:nth-child(2) {
+            animation-delay: 1.2s;
+            bottom: 11%;
+            height: 23px;
+            width: 380px;
+        }
+
+        .smoke:nth-child(3) {
+            animation-delay: 2.5s;
+            bottom: 19%;
+            height: 16px;
+        }
+
+        .smoke:nth-child(4) {
+            animation-delay: 0.7s;
+            bottom: 13%;
+            height: 20px;
+            width: 310px;
+        }
+
+        .smoke:nth-child(5) {
+            animation-delay: 3.6s;
+            bottom: 16%;
+            height: 17px;
+        }
+
+        /* Paper Plane - Positioned on the Right Side */
+        .paper-plane {
+            display: inline-block;
+        }
+
+        .plane-img {
+            /* width: 180px; */
+            animation: planeFly 4.2s ease-in-out infinite;
+        }
+
+        @keyframes planeFly {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(-12deg);
+            }
+
+            50% {
+                transform: translateY(-18px) rotate(12deg);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .ready-box {
+                padding: 35px 25px;
+                min-height: 200px;
+            }
+
+            .ready-title {
+                font-size: 2rem;
+            }
+
+            .d-flex {
+                justify-content: center !important;
+            }
+
+            .paper-plane {
+                margin-top: 15px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="left-header">
+            <div class="logo"><img class="js_logo" src="./assets/img/logo.png" alt=""></div>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+
+                <!-- SERVICES DROPDOWN -->
+                <li class="dropdown">
+                    <span class="dropdown-toggle" onclick="toggleDropdown(event)">Services</span>
+                    <div class="dropdown-menu">
+                        <a href="./web-development.html">Web Development</a>
+                        <a href="./seo.html">SEO Services</a>
+                        <a href="./app-development.html">App Development</a>
+                        <a href="./projects-worked-on.html">Projects Worked On</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <span class="dropdown-toggle" onclick="toggleDropdown(event)">Components</span>
+                    <div class="dropdown-menu">
+                        <a href="./components/cards.html">Cards</a>
+                        <a href="./components/advance-scroller.html">Advance Scroll</a>
+                        <a href="./components/buttons.html">Buttons</a>
+                        <a href="./components/headers.html">Headers</a>
+                        <a href="./components/footers.html">Footer</a>
+                        <a href="./components/scroll-cards.html">Scroll Cards</a>
+                        <a href="./components/banner.html">Banner</a>
+                        <a href="./components/faq.html">FAQ</a>
+                        <a href="./components/advance-sections.html">Advance Sections</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="right-header">
+            <a href="./projects-for-sale.html" class="btn-primary">Projects</a>
+            <a href="./contact.html" class="btn-outline-primary">Contact</a>
+        </div>
+
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </header>
+
+    <div class="container">
+        <section class="hero-section">
+            <div class="row">
+
+                <div class="content col-md-6">
+                    <h3>Hey, I'AM <span>Jagjot Singh</span></h3>
+
+                    <h1>
+                        <span id="typing-text"></span><span class="cursor">|</span>
+                    </h1>
+
+                    <p class="mt-3 mb-3">Passionate app and web developer building modern, responsive, and user-friendly
+                        digital
+                        experiences.</p>
+                    <a href="" class="btn-primary">Download CV</a>
+                </div>
+
+                <div class="my-img col-md-6">
+                    <img src="assets/img/jagjot.png" class="jagjot_img" alt="Jagjot Singh">
+
+                    <!-- Floating Small Tech Logos -->
+                    <img src="./assets/icons/html_icon.png" alt="HTML" class="tech-logo html">
+
+
+                    <img src="./assets/icons/css_icon.png" alt="CSS" class="tech-logo css">
+
+
+                    <img src="./assets/icons/bootstrap_icon.png" alt="Bootstrap" class="tech-logo bootstrap">
+
+
+                    <img src="./assets/icons/mysql_icon.png" alt="MySQL" class="tech-logo mysql">
+
+
+                    <img src="./assets/icons/react_native_icon.png" alt="React Native" class="tech-logo react">
+
+
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section id="about" class="about-section py-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+
+                <!-- Left Side - Text -->
+                <div class="col-lg-6">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="lead mb-4">
+                        I'm Jagjot Singh, a passionate Web Developer and App Developer based in Panipat, Haryana.
+                        I love turning ideas into clean, functional and beautiful digital experiences.
+                    </p>
+                    <p>
+                        With strong skills in modern web technologies, I focus on building responsive websites
+                        and mobile applications that provide great user experience.
+                        Currently open to new opportunities and exciting projects.
+                    </p>
+
+                    <!-- Skills with Percentage -->
+                    <div class="mt-5">
+                        <h4 class="mb-4">My Skills</h4>
+                        <div class="row g-4">
+                            <div class="col-12 col-md-6">
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">HTML5</span>
+                                        <span class="skill-percent">95%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">CSS3</span>
+                                        <span class="skill-percent">90%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 90%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">JavaScript</span>
+                                        <span class="skill-percent">85%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">Bootstrap</span>
+                                        <span class="skill-percent">88%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 88%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">React Native</span>
+                                        <span class="skill-percent">75%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">Web/App</span>
+                                        <span class="skill-percent">80%</span>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Personal Info -->
+                <div class="col-lg-6">
+                    <div class="about-info">
+                        <div class="info-item">
+                            <span class="info-label">Name</span>
+                            <span class="info-value">Jagjot Singh</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Location</span>
+                            <span class="info-value">Punjab, Mohali</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Experience</span>
+                            <span class="info-value">2+ Years</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Email</span>
+                            <span class="info-value">developer.jot@gmail.com</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Languages</span>
+                            <span class="info-value">English, Hindi, Punjabi</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-5">
+                        <a href="#" class="btn btn-primary btn-lg px-5">Download Full CV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="services" class="py-5" style="background: #0a0a0a; color: #ffffff;">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Left Side Content -->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <span class="fw-bold text-uppercase" style="letter-spacing: 2px; color: #D8673C;">WHAT WE DO</span>
+                    <h2 class="display-5 fw-bold mt-2 mb-3 section-title">Powerful Solutions For Modern Business</h2>
+                    <p class="lead" style="color: #cccccc;">
+                        We build fast, secure and scalable digital solutions tailored to your business needs.
+                    </p>
+                    <!-- <a href="#" class="btn btn-lg mt-3"
+                        style="background: transparent; border: 2px solid #D8673C; color: #D8673C; border-radius: 50px; padding: 12px 32px;">
+                        Explore All Services →
+                    </a> -->
+                </div>
+
+                <!-- Right Side Services Cards -->
+                <div class="col-lg-8">
+                    <div class="row g-2">
+                        <!-- Card 1 -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card h-100 text-center p-4"
+                                style="background: #1a1a1a; border: none; border-radius: 12px; transition: all 0.3s ease;">
+                                <div class="mb-4">
+                                    <img src="./assets/icons/monitor_icon.png" alt="Web Development"
+                                        style="width: 120px; height: 80px; object-fit: contain;">
+                                </div>
+                                <h5 class="fw-semibold text-white">Web Development</h5>
+                                <p class="small" style="color: #cccccc;">
+                                    Modern websites built with clean code and powerful technologies.
+                                </p>
+                                <!-- <a href="#" class="btn mt-auto"
+                                    style="background: transparent; border: 1px solid #D8673C; color: #D8673C; border-radius: 50px; font-size: 0.9rem;">
+                                    Learn More →
+                                </a> -->
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card h-100 text-center p-4"
+                                style="background: #1a1a1a; border: none; border-radius: 12px; transition: all 0.3s ease;">
+                                <div class="mb-4">
+                                    <img src="./assets/icons/phone_icon.png" alt="Mobile App Development"
+                                        style="width: 120px; height: 80px; object-fit: contain;">
+                                </div>
+                                <h5 class="fw-semibold text-white">Mobile App Development</h5>
+                                <p class="small" style="color: #cccccc;">
+                                    Cross-platform mobile apps for iOS & Android that users love.
+                                </p>
+                                <!-- <a href="#" class="btn mt-auto"
+                                    style="background: transparent; border: 1px solid #D8673C; color: #D8673C; border-radius: 50px; font-size: 0.9rem;">
+                                    Learn More →
+                                </a> -->
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card h-100 text-center p-4"
+                                style="background: #1a1a1a; border: none; border-radius: 12px; transition: all 0.3s ease;">
+                                <div class="mb-4">
+                                    <img src="./assets/icons/cart_icon.png" alt="E-Commerce Solutions"
+                                        style="width: 120px; height: 80px; object-fit: contain;">
+                                </div>
+                                <h5 class="fw-semibold text-white">E-Commerce Solutions</h5>
+                                <p class="small" style="color: #cccccc;">
+                                    Scalable e-commerce stores that grow your online business.
+                                </p>
+                                <!-- <a href="#" class="btn mt-auto"
+                                    style="background: transparent; border: 1px solid #D8673C; color: #D8673C; border-radius: 50px; font-size: 0.9rem;">
+                                    Learn More →
+                                </a> -->
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card h-100 text-center p-4"
+                                style="background: #1a1a1a; border: none; border-radius: 12px; transition: all 0.3s ease;">
+                                <div class="mb-4">
+                                    <img src="./assets/icons/cloud_icon.png" alt="Backend Development"
+                                        style="width: 120px; height: 80px; object-fit: contain;">
+                                </div>
+                                <h5 class="fw-semibold text-white">Backend Development</h5>
+                                <p class="small" style="color: #cccccc;">
+                                    Robust APIs and backend systems for high performance.
+                                </p>
+                                <!-- <a href="#" class="btn mt-auto"
+                                    style="background: transparent; border: 1px solid #D8673C; color: #D8673C; border-radius: 50px; font-size: 0.9rem;">
+                                    Learn More →
+                                </a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <section id="why-choose-us" class="py-5" style="background: #0a0a0a; color: #ffffff;">
+        <div class="container">
+            <div class="row align-items-center g-5">
+
+                <!-- Left Side - Image -->
+                <div class="col-lg-6">
+                    <div class="position-relative">
+                        <img src="./assets/home/why_choose_img.png" alt="We Build With Passion And Precision"
+                            class="img-fluid rounded-4 shadow-lg" style="width: 100%; height: auto; object-fit: cover;">
+                    </div>
+                </div>
+
+                <!-- Right Side - Content -->
+                <div class="col-lg-6">
+                    <span class="fw-bold text-uppercase" style="letter-spacing: 2px; color: #D8673C;">WHY CHOOSE
+                        US</span>
+
+                    <h2 class="display-5 fw-bold mt-3 mb-4 section-title">We Build With Passion And Precision</h2>
+
+                    <div class="row g-4 mt-2">
+
+                        <!-- Feature 1 -->
+                        <div class="col-md-6">
+                            <div class="d-flex gap-3">
+                                <div style="color: #D8673C; font-size: 1.6rem; line-height: 1;">✔</div>
+                                <div>
+                                    <h6 class="fw-semibold mb-1">Clean & Modern Design</h6>
+                                    <p class="small" style="color: #cccccc;">
+                                        Beautiful UI/UX that represents your brand perfectly.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Feature 2 -->
+                        <div class="col-md-6">
+                            <div class="d-flex gap-3">
+                                <div style="color: #D8673C; font-size: 1.6rem; line-height: 1;">✔</div>
+                                <div>
+                                    <h6 class="fw-semibold mb-1">High Performance</h6>
+                                    <p class="small" style="color: #cccccc;">
+                                        Optimized code for speed, performance and scalability.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Feature 3 -->
+                        <div class="col-md-6">
+                            <div class="d-flex gap-3">
+                                <div style="color: #D8673C; font-size: 1.6rem; line-height: 1;">✔</div>
+                                <div>
+                                    <h6 class="fw-semibold mb-1">Secure & Reliable</h6>
+                                    <p class="small" style="color: #cccccc;">
+                                        We follow best practices to keep your data safe.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Feature 4 -->
+                        <div class="col-md-6">
+                            <div class="d-flex gap-3">
+                                <div style="color: #D8673C; font-size: 1.6rem; line-height: 1;">✔</div>
+                                <div>
+                                    <h6 class="fw-semibold mb-1">On-Time Delivery</h6>
+                                    <p class="small" style="color: #cccccc;">
+                                        We value time and always deliver on commitment.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section class="featured-projects py-5" style="background-color: #0a0a0a; color: #ffffff;">
+        <div class="container">
+            <!-- Header -->
+            <div class="d-flex justify-content-between mb-3">
+                <div>
+                    <span class="text-uppercase fw-bold"
+                        style="color: #D8673C; font-size: 0.95rem; letter-spacing: 2px;">OUR WORK</span>
+                    <h2 class="display-5 fw-bold mt-2 section-title">Featured Projects</h2>
+                </div>
+                <a href="#" class="text-decoration-none d-flex align-items-center gap-2"
+                    style="color: #D8673C; font-weight: 500; font-size: 20px;">
+                    View All Projects
+                    <span style="font-size: 1.5rem;">→</span>
+                </a>
+            </div>
+
+
+            <div class="row">
+
+
+
+                <div class="col-md-4 mt-4">
+                    <a href="./Apks/Security_Guard_App.html" style="text-decoration: none; color: white;">
+                        <div class="project-card">
+                            <img src="./assets/img/home_project_banner/security_home_banner.png" alt="">
+                            <div class="project-card-content">
+                                <div>
+                                    <h4>Mobile Application</h4>
+                                    <h2>Security Guard App</h2>
+                                    <p>A smart and efficient mobile application designed for security guards to manage
+                                        attendance, record incidents, track patrols, and generate daily reports in
+                                        real-time.</p>
+                                </div>
+                                <span class="project-arrow"><i class="fa-solid fa-angle-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+
+                <div class="col-md-4 mt-4">
+                    <a href="./Apks/travelooo_app.html" style="text-decoration: none; color: white;">
+                        <div class="project-card">
+                            <img src="./assets/img/home_project_banner/travell_view_banner.png" alt="">
+                            <div class="project-card-content">
+                                <div>
+                                    <h4>Mobile Application</h4>
+                                    <h2>Traveloo</h2>
+                                    <p>A modern travel app that helps users discover destinations, book trips, and
+                                        explore
+                                        hotels with real-time location features and a smooth user experience.</p>
+                                </div>
+                                <span class="project-arrow"><i class="fa-solid fa-angle-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-md-4 mt-4">
+                    <a href="./Apks/NestFinder_property_app.html" style="text-decoration: none; color: white;">
+                        <div class="project-card">
+                            <img src="./assets/img/home_project_banner/nestfinder_Home_banner.png" alt="">
+                            <div class="project-card-content">
+                                <div>
+                                    <h4>Mobile Application</h4>
+                                    <h2>Nest Finder - Property App</h2>
+                                    <p>A modern real estate mobile application built with React Native and Expo.
+                                        Users can explore properties, view detailed listings, search homes, and connect
+                                        with
+                                        owners.</p>
+                                </div>
+                                <span class="project-arrow"><i class="fa-solid fa-angle-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="container">
+
+            <div class="text-center mb-2">
+                <div class="contact-eyebrow">Contact Us</div>
+                <h2 class="section-title">Let's Build Something <span>Amazing</span> Together</h2>
+                <p class="contact-sub">Have a project in mind or want to discuss an idea? I'd love to hear from you.</p>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- LEFT: Message Form -->
+                <div class="col-lg-7">
+                    <div class="c-card h-100">
+                        <div class="c-card-header">
+                            <div class="c-icon-wrap"><i class="fa-solid fa-paper-plane"></i></div>
+                            <div>
+                                <p class="c-card-title">Send Me a Message</p>
+                                <p class="c-card-sub">Fill out the form and I'll get back to you soon.</p>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mb-0">
+                            <div class="col-md-6">
+                                <div class="c-field">
+                                    <i class="fa-solid fa-user c-field-icon"></i>
+                                    <input type="text" class="c-input" placeholder="Your Name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="c-field">
+                                    <i class="fa-solid fa-envelope c-field-icon"></i>
+                                    <input type="email" class="c-input" placeholder="Your Email">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="c-field">
+                            <i class="fa-solid fa-file-lines c-field-icon"></i>
+                            <input type="text" class="c-input" placeholder="Subject">
+                        </div>
+
+                        <div class="c-field">
+                            <i class="fa-solid fa-pencil c-field-icon"></i>
+                            <textarea class="c-input" placeholder="Your Message"></textarea>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3 flex-wrap mt-2">
+                            <button class="c-btn">
+                                Send Message <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                            <span class="c-reply-note">
+                                <i class="fa-regular fa-clock"></i> I usually reply within 24 hours
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Info + Social -->
+                <div class="col-lg-5 d-flex flex-column gap-0">
+
+                    <div class="c-card">
+                        <div class="c-card-header">
+                            <div class="c-icon-wrap"><i class="fa-solid fa-address-card"></i></div>
+                            <div>
+                                <p class="c-card-title">Contact Information</p>
+                                <p class="c-card-sub">Feel free to reach out through any of these channels.</p>
+                            </div>
+                        </div>
+
+                        <div class="info-row">
+                            <div class="info-row-left">
+                                <div class="info-row-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div>
+                                    <p class="info-label">Email</p>
+                                    <p class="info-value">devloper.jot@gmail.com</p>
+                                </div>
+                            </div>
+                            <button class="copy-btn" title="Copy email"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+
+                        <div class="info-row">
+                            <div class="info-row-left">
+                                <div class="info-row-icon"><i class="fa-solid fa-phone"></i></div>
+                                <div>
+                                    <p class="info-label">Phone</p>
+                                    <p class="info-value">+91 950 117 0951</p>
+                                </div>
+                            </div>
+                            <button class="copy-btn" title="Copy phone"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+
+                        <div class="info-row">
+                            <div class="info-row-left">
+                                <div class="info-row-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div>
+                                    <p class="info-label">Location</p>
+                                    <p class="info-value">Punjab, India</p>
+                                </div>
+                            </div>
+                            <button class="copy-btn" title="Copy location"><i class="fa-regular fa-copy"></i></button>
+                        </div>
+
+                        <div class="info-row">
+                            <div class="info-row-left">
+                                <div class="info-row-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                                <div>
+                                    <p class="info-label">Availability</p>
+                                    <p class="info-value">Mon – Sat : 9AM – 7PM IST</p>
+                                </div>
+                            </div>
+                            <button class="copy-btn" title="Copy availability"><i
+                                    class="fa-regular fa-copy"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="c-card connect-card">
+                        <div class="c-card-header">
+                            <div class="c-icon-wrap"><i class="fa-solid fa-share-nodes"></i></div>
+                            <div>
+                                <p class="c-card-title">Connect With Me</p>
+                                <p class="c-card-sub">Follow me on social media</p>
+                            </div>
+                        </div>
+
+                        <div class="social-grid">
+                            <a href="#" class="social-btn gh"><i class="fa-brands fa-github"></i> GitHub</a>
+                            <a href="#" class="social-btn li"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                            <a href="#" class="social-btn ig"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                            <a href="#" class="social-btn tw"><i class="fa-brands fa-x-twitter"></i> X (Twitter)</a>
+                            <a href="#" class="social-btn yt"><i class="fa-brands fa-youtube"></i> YouTube</a>
+                            <a href="#" class="social-btn fb"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- Ready to Start Section -->
+    <section class="ready-start py-5" style="background-color: #0a0a0a;">
+        <div class="container">
+            <div class="ready-box">
+                <div class="row align-items-center">
+
+                    <!-- Left Text -->
+                    <div class="col-lg-6 col-md-6">
+                        <h2 class="ready-title">Ready to Start Your Project?</h2>
+                        <p class="ready-subtitle">Let's build something amazing together.</p>
+                    </div>
+
+                    <!-- Right Side - Button + Paper Plane Side by Side -->
+                    <div
+                        class="col-lg-6 col-md-6 text-md-end position-relative d-flex align-items-center justify-content-end gap-4 flex-wrap">
+                        <a href="#" class="btn btn-quote">
+                            Get a Free Quote
+                            <!-- <span class="arrow">→</span> -->
+                        </a>
+
+                        <!-- Paper Plane Image - Right Side -->
+                        <div class="paper-plane">
+                            <img src="./assets/icons/paper_dotted_plane_icon.png" alt="Paper Plane" class="plane-img">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Smoke Container -->
+                <div class="smoke-container">
+                    <div class="smoke"></div>
+                    <div class="smoke"></div>
+                    <div class="smoke"></div>
+                    <div class="smoke"></div>
+                    <div class="smoke"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-5">
+
+                <!-- Left Column -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-logo"><img class="js_logo" src="./assets/img/logo.png" alt=""></div>
+                    <p class="footer-desc">
+                        Passionate Web & Android Developer turning ideas into beautiful digital experiences.
+                        Based in Mohali, Punjab, India.
+                    </p>
+                    <div class="social-icons-footer">
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/is.that.jot" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="project.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="col-lg-3 col-md-6">
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="web-development.html">Web Development</a></li>
+                        <li><a href="app-development.html">App Development</a></li>
+                        <li><a href="seo.html">Seo Development</a></li>
+                        <li><a href="#">Portfolio Websites</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact Info</h5>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>developer.jot@gmail.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+91 9501170951</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Mohali, Punjab, India</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">
+                            &copy; 2026 Jagjot Singh. All Rights Reserved.
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <p class="mb-0">
+                            Made with ❤️ and lots of ☕ in Punjab
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+
+    <script>
+        function toggleMenu() {
+            const header = document.querySelector("header");
+            header.classList.toggle("menu-open");
+        }
+
+        // ✅ Typing Animation Script
+        const roles = ["App Developer", "Web Developer"];
+        let roleIndex = 0;
+        let charIndex = 0;
+        let currentText = "";
+        let isDeleting = false;
+
+        function typeEffect() {
+            const typingElement = document.getElementById("typing-text");
+
+            if (!isDeleting) {
+                currentText = roles[roleIndex].substring(0, charIndex + 1);
+                charIndex++;
+            } else {
+                currentText = roles[roleIndex].substring(0, charIndex - 1);
+                charIndex--;
+            }
+
+            typingElement.textContent = currentText;
+
+            let speed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === roles[roleIndex].length) {
+                speed = 1500;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                speed = 500;
+            }
+
+            setTimeout(typeEffect, speed);
+        }
+
+        document.addEventListener("DOMContentLoaded", typeEffect);
+    </script>
+
+
+    <script>
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const val = btn.closest('.info-row').querySelector('.info-value').textContent;
+                navigator.clipboard.writeText(val).then(() => {
+                    const icon = btn.querySelector('i');
+                    icon.className = 'fa-solid fa-check';
+                    setTimeout(() => icon.className = 'fa-regular fa-copy', 1500);
+                });
+            });
+        });
+    </script>
+
+
+    <script src="./assets/css/script.js"></script>
+
+</body>
+
+</html>
